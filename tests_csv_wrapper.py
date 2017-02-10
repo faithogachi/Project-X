@@ -20,6 +20,18 @@ class CsvWrapperTest(unittest.TestCase):
             first_row = next(reader)
             self.assertEqual(first_row, arr_to_write)
 
+    def test_delete_csv_row(self):
+        arr_to_delete = ['test', 'test', 'test']
+        csv_wrapper = CsvWrapper()
+        csv_wrapper.delete(arr_to_delete)
+
+        #delete a file to test if .delete works
+        with open('skills.csv', newline='') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+            for row in reader:
+                self.assertNotEqual(row, arr_to_delete)
+            
+
        
 
 
