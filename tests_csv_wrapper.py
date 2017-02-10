@@ -30,6 +30,20 @@ class CsvWrapperTest(unittest.TestCase):
             reader = csv.reader(csvfile, delimiter=',', quotechar='|')
             for row in reader:
                 self.assertNotEqual(row, arr_to_delete)
+
+    def test_update_csv_row(self):
+        arr_to_update = ['test', 'test', 'test']
+        csv_wrapper = CsvWrapper()
+        csv_wrapper.update(arr_to_update)
+
+        #dupdate a file to test if update works
+        with open('skills.csv', newline='') as csvfile:
+            reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+            for row in reader:
+                self.assertEqual(row, arr_to_update)
+
+
+    
             
 
        
