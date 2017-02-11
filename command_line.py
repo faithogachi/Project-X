@@ -33,7 +33,12 @@ if args.add:
     	print("You have successfully added a new Skill: " + skillname)
 
 if args.view_all:
-    print("You have chosen to view all skills")
+		#incompleteSkills = skills.skillsNotStudied()
+	#output = ""
+	#for skl in incompleteSkills:
+		#output=output+"\n"+ skl[0]."."+ skl[1]
+	    #print("You have marked skill completed")
+    print(skill.skillsAdded())
 
 if args.view_studied:
     print("You have chosen to view all studied skills")
@@ -46,8 +51,9 @@ if args.progress:
 
 if args.done:
 	#fetch all skills that are not yet done
-	incompleteSkills = skills.skillsNotStudied()
-	output = ""
-	for skl in incompleteSkills:
-		output=output+"\n"+ skl[0]."."+ skl[1]
-	    print("You have marked skill completed")
+	print("")
+	#incompleteSkills = skills.skillsNotStudied()
+	#output = ""
+	#for skl in incompleteSkills:
+		#output=output+"\n"+ skl[0]."."+ skl[1]
+	    #print("You have marked skill completed")

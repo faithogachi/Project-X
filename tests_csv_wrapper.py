@@ -20,5 +20,22 @@ class CsvWrapperTest(unittest.TestCase):
             first_row = next(reader)
             self.assertEqual(first_row, arr_to_write)
 
+    def test_read_csv(self):
+        arr_to_write = ['testing', 'testing', 'testing']
+        csv_wrapper = CsvWrapper()
+        
+        for i in range(0, 10):
+            csv_wrapper.add(arr_to_write)
+  
+        results = csv_wrapper.read()
+        self.assertEqual(len(results), 10)
+
+
+    def tearDown(self):
+        """
+        This parts should empty the skills.csv after each tests runs
+        """
+        open('skills.csv', 'w').close()
+        
 if __name__ == '__main__':
     unittest.main()
